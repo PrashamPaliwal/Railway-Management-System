@@ -5,16 +5,7 @@ Built with a **multi-file structure** for scalability and future expansion.
 
 ---
 
-## Features
-- **Station Management**: Add, check, and select stations by state and city.
-- **Route Management**: Create and validate train routes across multiple stations.
-- **Train Management**: Add new trains, assign routes, and manage journeys.
-- **Reservation System**: Search and select trains based on routes and dates.
-- **Data Handling**: File-based storage for states, cities, stations, routes, and train details.
-
----
-
-## Project Files
+## 📂 Project Files
 - **TRAIN.py** → Main program (clean version)  
 - **train(RAW).py** → Original version before cleanup  
 - **Database folders** →  
@@ -28,11 +19,24 @@ Built with a **multi-file structure** for scalability and future expansion.
   - `Route_Train_Data` → routes mapped to trains  
 - **Other text files** → configuration and supporting data  
 
-## How to Run
+---
+
+## 🚀 Features
+- **Station Management**: Add, check, and select stations by state and city.
+- **Route Management**: Create and validate train routes across multiple stations.
+- **Train Management**: Add new trains, assign routes, and manage journeys.
+- **Reservation System**: Search and select trains based on routes and dates.
+- **Data Handling**: File-based storage for states, cities, stations, routes, and train details.
+
+---
+
+## ⚙️ How to Run
 1. Clone the repository.  
 2. Keep all folders and `.txt` files in the same structure.  
 3. Run `TRAIN.py` in Python.  
 
-## Notes
+---
+
+## ⚠️ Notes
 - The system requires all data files and folders to be present.  
 - This project was built to practice system design and file-based data handling.  
