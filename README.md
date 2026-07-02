@@ -31,7 +31,7 @@ Built with a **multi-file structure** for scalability and future expansion.
 ## How to Run
 1. Clone the repository.  
 2. Keep all folders and `.txt` files in the same structure.  
-3. Run `TRAIN.py` in Python (tested on Python 3.x).  
+3. Run `TRAIN.py` in Python.  
 
 ## Notes
 - The system requires all data files and folders to be present.  
