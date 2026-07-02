@@ -11,7 +11,6 @@ Built with a **multi-file structure** for scalability and future expansion.
 - **Train Management**: Add new trains, assign routes, and manage journeys.
 - **Reservation System**: Search and select trains based on routes and dates.
 - **Data Handling**: File-based storage for states, cities, stations, routes, and train details.
-- **Rollback & Updates**: Designed with mechanisms to update train data safely.
 
 ---
 
