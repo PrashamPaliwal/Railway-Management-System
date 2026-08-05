@@ -22,11 +22,11 @@ Built with a **multi-file structure** for scalability and future expansion.
 ---
 
 ## 🚀 Features
-- **Station Management**: Add, check, and select stations by state and city.
-- **Route Management**: Create and validate train routes across multiple stations.
-- **Train Management**: Add new trains, assign routes, and manage journeys.
-- **Reservation System**: Search and select trains based on routes and dates.
-- **Data Handling**: File-based storage for states, cities, stations, routes, and train details.
+- **Station Management**: Add, check, and select stations by state and city.  
+- **Route Management**: Create and validate train routes across multiple stations.  
+- **Train Management**: Add new trains, assign routes, and manage journeys.  
+- **Reservation System**: Search and select trains based on routes and dates.  
+- **Data Handling**: File-based storage for states, cities, stations, routes, and train details.  
 
 ---
 
@@ -34,6 +34,22 @@ Built with a **multi-file structure** for scalability and future expansion.
 1. Clone the repository.  
 2. Keep all folders and `.txt` files in the same structure.  
 3. Run `TRAIN.py` in Python.  
+
+---
+
+## 🧩 Challenges Faced
+- **Interlinking Data Files**: Managing relationships between multiple `.txt` files for states, cities, stations, routes, and trains was complex. Ensuring smooth data acceptance and runtime validation required careful design.  
+- **Error Handling & Validation**: Runtime checks were added to catch inconsistencies and prevent invalid data from being stored.  
+- **File Naming Limitations**: Some files couldn’t be named beyond a certain character limit. To solve this, I implemented **hashlib-based shortening**—allowing unique, shorter names while still mapping correctly to the intended data (especially in `Route_Train_Data`).  
+
+---
+
+## 🔮 Future Improvements
+- **User Details**: Add passenger information such as phone number updates and extended profile management.  
+- **Train Edit Functionality**:  
+  - Allow administrators to reduce or increase seat counts dynamically.  
+  - Implement rollback logic: if seat reductions conflict with already reserved seats for future journeys, the system will discard changes safely without breaking data integrity.  
+- **Database Integration**: Transition from file-based storage to **SQLite/MySQL** for more robust and scalable data management.  
 
 ---
 
