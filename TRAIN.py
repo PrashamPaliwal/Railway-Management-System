@@ -6,9 +6,13 @@ class Date ():
     def Date_selection ():
         err=1
         while err==1:
-            y=int(input('enter year in (****) format = ',))
-            m=int(input('enter month in (**) format = ',)) 
-            d=int(input('enter day in (**) format = ',))
+            try:
+                y=int(input('enter year in (****) format = ',))
+                m=int(input('enter month in (**) format = ',)) 
+                d=int(input('enter day in (**) format = ',))
+            except ValueError:
+                print("\ninvalid input try again\n")
+                continue
             if y>=1000 and m>0 and d>0 and m<=12 and d<=31 and y<=9999:
                 if m==2 and y%4==0 and d<=29:
                     if y%100==0:
@@ -45,7 +49,11 @@ class india ():
             j+=1
         err=1
         while err==1:
-            q=int(input('enetr index of state to select = ',))
+            try:
+                q=int(input('enetr index of state to select = ',))
+            except ValueError:
+                print("\ninvalid input try again\n")
+                continue
             j=1
             for i in df :
                 if j==q:
@@ -54,7 +62,7 @@ class india ():
                     err=0
                 j+=1
             if err==1:
-                print("wrong input/ invalid input try again")
+                print("\ninput is out of range try again\n")
         print()
         return s 
     @staticmethod
@@ -68,7 +76,12 @@ class india ():
             j+=1
         err=1
         while err==1:
-            q=int(input('enetr index of city to select = ',))
+            try:
+                q=int(input('enetr index of city to select = ',))
+            except ValueError:
+                print("\ninvalid input try again\n")
+                continue
+
             j=1
             for i in df :
                 if j==q:
@@ -77,7 +90,7 @@ class india ():
                     err=0
                 j+=1
             if err==1:
-                print("wrong input/ invalid input try again")
+                print("\ninput is out of range try again\n")
         print()
         return p  
 class station():
@@ -103,7 +116,7 @@ class station():
                 print(i)
                 err=0
         if err==1:
-            print('any station at your city not found')
+            print('\nany station at your city not found')
     @staticmethod
     def Station_selection_user():
         il=0
@@ -126,7 +139,11 @@ class station():
             if il==1:
                 while err==1:
                     print('enter the index of station you want to select')
-                    ind = int(input())
+                    try:
+                        ind = int(input())
+                    except ValueError:
+                        print("\ninvalid input try again\n")
+                        continue
                     jd=j.strip(',').split(',')
                     if ind>0 and ind<=len(jd):
                         print(f'{jd[ind-1]}')
@@ -134,19 +151,23 @@ class station():
                         err=0
                         return final_stattion
                     else :
-                        print('wrong indexing try again')
+                        print('\nwrong indexing try again')
             else:
                 cker=0
                 while cker!=2  and cker!=1:
                     print('there were no stations in city you selected if you want to select station at other city press 1 or else press 2')
-                    cker=int(input())
+                    try:
+                        cker=int(input())
+                    except ValueError:
+                        print("\ninvalid input try again\n")
+                        continue
                     if cker==2:
                         il=1
                         print('thank you')
                     elif cker==1:
                         il=0
                     else:
-                        print('invalid input try again')
+                        print('\nwrong input try again')
     @staticmethod
     def Station_selection_official ():
         il=0
@@ -169,7 +190,11 @@ class station():
             if il==1:
                 while err==1:
                     print('\nenter the index of station you want to select')
-                    ind = int(input())
+                    try:
+                        ind = int(input())
+                    except ValueError:
+                        print("\ninvalid input try again\n")
+                        continue
                     jd=j.strip(',').split(',')
                     if ind>0 and ind<=len(jd):
                         print(f'{jd[ind-1]}')
@@ -177,7 +202,7 @@ class station():
                         err=0
                         return final_stattion
                     else :
-                        print('wrong indexing try again')
+                        print('\nwrong indexing try again')
             else:
                 print('there were no stations in city you selected')
 class route():
@@ -207,14 +232,18 @@ class route():
             xy=0
             while xy!=1 and xy!=2:
                 print(f'final rout is \n{frs}\nif confirm press 1 if not press 2')
-                xy = int(input())
+                try:
+                    xy = int(input())
+                except ValueError:
+                    print("\ninvalid input try again\n")
+                    continue
                 if xy==1:
                     fr.write(f'{frs}\n')
                     xc=1
                 elif xy==2:
                     print('try creating whole route again')
                 else:
-                    print('invalid input')
+                    print('\nwrong input try again')
         
         fr.close()
         rt=route.get_filename(rout)
@@ -260,13 +289,17 @@ class route():
                 ind=0
                 while ind==0:
                     print('enter index of route you want to select\n')
-                    ind=int(input())
+                    try:
+                        ind=int(input())
+                    except ValueError:
+                        print("\ninvalid input try again\n")
+                        continue
                     issd=isd.strip('*').split('*')
                     if ind<=len(issd) and ind>0:
                         issd[ind-1]+="\n"
                         return issd[ind-1]
                     else:
-                        print('invalid input try again')
+                        print('\nwrong input try again')
                         ind=0
     @staticmethod
     def route_selection_user():
@@ -307,7 +340,11 @@ class route():
                 ex=0
                 while ex!=1 and ex!=2:
                     print('direct route for your travel didnt found if you want to re try press 1 or if you want to exit press 2')
-                    ex = int(input())
+                    try:
+                        ex = int(input())
+                    except ValueError:
+                        print("\ninvalid input try again\n")
+                        continue
                     if ex==1:
                         xc=0
                     elif ex==2:
@@ -320,7 +357,11 @@ class route():
                 ind=0
                 while ind==0:
                     print('enter index of route you want to select\n')
-                    ind=int(input())
+                    try:
+                        ind=int(input())
+                    except ValueError:
+                        print("\ninavlid input\n")
+                        continue
                     issd=isd.strip('*').split('*')
                     if ind<=len(issd) and ind>0:
                         issd[ind-1]+='\n'
@@ -364,21 +405,24 @@ class route():
 class Train():
     @staticmethod
     def Add_New_Train():
-        tn = str(input('enetr name of train correctly',))
-        tnu = int(input('enter train number',))
-        x = int(input('number of 1A seats = ',))
-        y = int(input('number of 2A seats = ',))
-        z = int(input('number of 3A seats = ',))
-        gen = int(input('Number of Non AC General seats = ',))
-        f=open('Train_Data','a')
-        f.write(f'{tnu};{tn};1A:{x};2A:{y};3A:{z};general:{gen}\n')
-        f.close()
-        tnnu=str(tnu)
-        ff=open('Train_Full_Data/'+tnnu+'.txt','w')
-        ff.write(f'Name = {tn}\nTrain Number = {tnu}\nNumber of 1st AC seats = {x}\nNumber of 2nd AC seats = {y}\nNumber of 3rd AC seats = {z}\nNumber of Non AC General seats = {gen}\nTotal_Journeys=0\n')
-        ff.close()
-        tfp=f'Train_Full_Data/{tnu}'
-        os.makedirs(tfp, exist_ok=True)
+        try:
+            tn = str(input('enetr name of train correctly = ',))
+            tnu = int(input('enter train number = ',))
+            x = int(input('number of 1A seats = ',))
+            y = int(input('number of 2A seats = ',))
+            z = int(input('number of 3A seats = ',))
+            gen = int(input('Number of Non AC General seats = ',))
+            f=open('Train_Data','a')
+            f.write(f'{tnu};{tn};1A:{x};2A:{y};3A:{z};general:{gen}\n')
+            f.close()
+            tnnu=str(tnu)
+            ff=open('Train_Full_Data/'+tnnu+'.txt','w')
+            ff.write(f'Name = {tn}\nTrain Number = {tnu}\nNumber of 1st AC seats = {x}\nNumber of 2nd AC seats = {y}\nNumber of 3rd AC seats = {z}\nNumber of Non AC General seats = {gen}\nTotal_Journeys=0\n')
+            ff.close()
+            tfp=f'Train_Full_Data/{tnu}'
+            os.makedirs(tfp, exist_ok=True)
+        except ValueError:
+            print("invalid input try again")
     @staticmethod
     def add_route_to_train():
         err=1
@@ -388,108 +432,111 @@ class Train():
         rn = route.route_selection_Official()
         rnt=rn
         rn=rn.strip('\n')
-        tnu=int(input('enter train number ',))
-        nd = int(input('journey is of how many days = ',))
-        print("select start date of journey")
-        sd = Date.Date_selection()
-        ssd=str(sd)
-        er=0
-        for i in atd :
-            ds=i.strip('\n').split(';')
-            if ds[0]==str(tnu):
-                dss=i.strip('\n')
-                dss+=f';{rn};Start_Date={ssd}'
-                for j in range (2,nd+1):
-                    if j!=(nd):
-                        print(f'select date {j}')
-                        ad=Date.Date_selection()
-                        sad=str(ad)
-                        dss+=f';Date_{j}={sad}'
-                    else:
-                        print(f'select End date {j}')
-                        ad=Date.Date_selection()
-                        sad=str(ad)
-                        dss+=f';End_Date={sad}\n'
-                        err=0
-        if err==0:
-            for x in range (0,(nd)):
-                dsa = dss.strip('\n').split(';')
-                spdd=(dsa[7+x])
-                spd=spdd.split('=')
-                if os.path.exists(f'Dated_Train_Route_Data/{spd[1]}.txt'):
-                    frs=open(f'Dated_Train_Route_Data/{spd[1]}.txt','r')
-                else:
-                    frs=open(f'Dated_Train_Route_Data/{spd[1]}.txt','w')
-                    frs.close()
-                    frs=open(f'Dated_Train_Route_Data/{spd[1]}.txt','r')
-                dfrs=frs.readlines()
-                frs.close()
-                for cker in dfrs :
-                    if cker.startswith(f'{tnu}'):
-                        er=1
-            if er==0:
-                fr = open(f'Dated_Train_Route_Data/{ssd}.txt','a')
-                fr.write(dss)
-                fr.close()
-                for x in range (1,(nd)):
-                    dsa = dss.strip('\n').split(';')
-                    spd=dsa[7+x].split('=')
-                    frs=open(f'Dated_Train_Route_Data/{spd[1]}.txt','a')
-                    frs.write(dss)
-                    frs.close()
-                ff=open('Train_Full_Data/'+str(tnu)+'.txt','r')
-                tou=ff.readlines()
-                ff.close()
-                ff=open('Train_Full_Data/'+str(tnu)+'.txt','w')
-                for jkl in tou:
-                        jkul=jkl.strip('\n').split('=')
-                        if jkul[0]=='Total_Journeys':
-                            note=jkul[1]
-                            num=int(note)
-                            jkul[1]=(num+1)
-                            ff.write(f'Total_Journeys={jkul[1]}\n')
+        try:
+            tnu=int(input('enter train number ',))
+            nd = int(input('journey is of how many days = ',))
+            print("select start date of journey")
+            sd = Date.Date_selection()
+            ssd=str(sd)
+            er=0
+            for i in atd :
+                ds=i.strip('\n').split(';')
+                if ds[0]==str(tnu):
+                    dss=i.strip('\n')
+                    dss+=f';{rn};Start_Date={ssd}'
+                    for j in range (2,nd+1):
+                        if j!=(nd):
+                            print(f'select date {j}')
+                            ad=Date.Date_selection()
+                            sad=str(ad)
+                            dss+=f';Date_{j}={sad}'
                         else:
-                            ff.write(jkl)
-                        if jkl.startswith('Number of 1st AC seats'):
-                            jkll=jkl.strip('\n')
-                            xa=int(jkll.split('=')[1].strip())
-                        if jkl.startswith('Number of 2nd AC seats'):
-                            jkll=jkl.strip('\n')
-                            ya=int(jkll.split('=')[1].strip())
-                        if jkl.startswith('Number of 3rd AC seats'):
-                            jkll=jkl.strip('\n')
-                            za=int(jkll.split('=')[1].strip())
-                        if jkl.startswith('Number of Non AC General seats'):
-                            jkll=jkl.strip('\n')
-                            gena=int(jkll.split('=')[1].strip())
-                ff.close()
-                ff=open('Train_Full_Data/'+str(tnu)+'.txt','a')
-                ff.write(f'{num+1}~{dss}')
-                ff.close()
-                xp=int(input('Price of 1A seats',))
-                yp=int(input('Price of 2A seats',))
-                zp=int(input('Price of 3A seats',))
-                genp=int(input('Price of Gen seats',))
-                fff=open('Train_Full_Data/'+str(tnu)+'/'+str(num+1)+'.txt','w')
-                fff.write(f'1A(totle):{xa}\n1A(Price):{xp}\n1A(avl):{xa}\n1A(booked):0\n1A(bookedby):\n2A(totle):{ya}\n2A(Price):{yp}\n2A(avl):{ya}\n2A(booked):0\n2A(bookedby):\n3A(totle):{za}\n3A(Price):{zp}\n3A(avl):{za}\n3A(booked):0\n3A(bookedby):\ngen(totle):{gena}\ngen(Price):{genp}\ngen(avl):{gena}\ngen(booked):0\ngen(bookedby):\n')
-                fff.close()
-                rtn=route.get_filename(rnt)
-                ffr=open(f'Route_Train_Data/{rtn}.txt','r')
-                trs=ffr.readlines()
-                ffr.close()
-                nbl=0
-                for ji in trs:
+                            print(f'select End date {j}')
+                            ad=Date.Date_selection()
+                            sad=str(ad)
+                            dss+=f';End_Date={sad}\n'
+                            err=0
+            if err==0:
+                for x in range (0,(nd)):
+                    dsa = dss.strip('\n').split(';')
+                    spdd=(dsa[7+x])
+                    spd=spdd.split('=')
+                    if os.path.exists(f'Dated_Train_Route_Data/{spd[1]}.txt'):
+                        frs=open(f'Dated_Train_Route_Data/{spd[1]}.txt','r')
+                    else:
+                        frs=open(f'Dated_Train_Route_Data/{spd[1]}.txt','w')
+                        frs.close()
+                        frs=open(f'Dated_Train_Route_Data/{spd[1]}.txt','r')
+                    dfrs=frs.readlines()
+                    frs.close()
+                    for cker in dfrs :
+                        if cker.startswith(f'{tnu}'):
+                            er=1
+                if er==0:
+                    fr = open(f'Dated_Train_Route_Data/{ssd}.txt','a')
+                    fr.write(dss)
+                    fr.close()
+                    for x in range (1,(nd)):
+                        dsa = dss.strip('\n').split(';')
+                        spd=dsa[7+x].split('=')
+                        frs=open(f'Dated_Train_Route_Data/{spd[1]}.txt','a')
+                        frs.write(dss)
+                        frs.close()
+                    ff=open('Train_Full_Data/'+str(tnu)+'.txt','r')
+                    tou=ff.readlines()
+                    ff.close()
+                    ff=open('Train_Full_Data/'+str(tnu)+'.txt','w')
+                    for jkl in tou:
+                            jkul=jkl.strip('\n').split('=')
+                            if jkul[0]=='Total_Journeys':
+                                note=jkul[1]
+                                num=int(note)
+                                jkul[1]=(num+1)
+                                ff.write(f'Total_Journeys={jkul[1]}\n')
+                            else:
+                                ff.write(jkl)
+                            if jkl.startswith('Number of 1st AC seats'):
+                                jkll=jkl.strip('\n')
+                                xa=int(jkll.split('=')[1].strip())
+                            if jkl.startswith('Number of 2nd AC seats'):
+                                jkll=jkl.strip('\n')
+                                ya=int(jkll.split('=')[1].strip())
+                            if jkl.startswith('Number of 3rd AC seats'):
+                                jkll=jkl.strip('\n')
+                                za=int(jkll.split('=')[1].strip())
+                            if jkl.startswith('Number of Non AC General seats'):
+                                jkll=jkl.strip('\n')
+                                gena=int(jkll.split('=')[1].strip())
+                    ff.close()
+                    ff=open('Train_Full_Data/'+str(tnu)+'.txt','a')
+                    ff.write(f'{num+1}~{dss}')
+                    ff.close()
+                    xp=int(input('Price of 1A seats',))
+                    yp=int(input('Price of 2A seats',))
+                    zp=int(input('Price of 3A seats',))
+                    genp=int(input('Price of Gen seats',))
+                    fff=open('Train_Full_Data/'+str(tnu)+'/'+str(num+1)+'.txt','w')
+                    fff.write(f'1A(totle):{xa}\n1A(Price):{xp}\n1A(avl):{xa}\n1A(booked):0\n1A(bookedby):\n2A(totle):{ya}\n2A(Price):{yp}\n2A(avl):{ya}\n2A(booked):0\n2A(bookedby):\n3A(totle):{za}\n3A(Price):{zp}\n3A(avl):{za}\n3A(booked):0\n3A(bookedby):\ngen(totle):{gena}\ngen(Price):{genp}\ngen(avl):{gena}\ngen(booked):0\ngen(bookedby):\n')
+                    fff.close()
+                    rtn=route.get_filename(rnt)
+                    ffr=open(f'Route_Train_Data/{rtn}.txt','r')
+                    trs=ffr.readlines()
+                    ffr.close()
+                    nbl=0
+                    for ji in trs:
+                        nbl+=1
                     nbl+=1
-                nbl+=1
-                ffr=open(f'Route_Train_Data/{rtn}.txt','a')
-                ffr.write(f'{nbl}~{dss}')
-                ffr.close()
-                print(f'train add to route {rnt} sucesfully')
-            elif er==1:
-                print('train number enetred already has a route for the particular date selected please verify records again')
-                err=1        
-        else :
-            print('route adding failed try again with correct credenrials')
+                    ffr=open(f'Route_Train_Data/{rtn}.txt','a')
+                    ffr.write(f'{nbl}~{dss}')
+                    ffr.close()
+                    print(f'train add to route {rnt} sucesfully')
+                elif er==1:
+                    print('train number enetred already has a route for the particular date selected please verify records again')
+                    err=1        
+            else :
+                print('route adding failed try again with correct credenrials')
+        except ValueError:
+            print("invalid input")
     @staticmethod
     def Search_Train():
         print('select route for which you want your train')
@@ -740,11 +787,19 @@ class user():
         log=0
         while log==0:
             print('1 for Log In and 2 for Sign Up ')
-            log=int(input())
+            try:
+                log=int(input())
+            except ValueError:
+                print("invalid input")
+                continue
             if log == 2:
                 ern=1
                 while ern==1:
-                    self.num=int(input('enter your mobile number = ',))
+                    try:
+                        self.num=int(input('enter your mobile number = ',))
+                    except ValueError:
+                        print("\ninvalid input try again")
+                        continue
                     if len(str(self.num))==10:
                         ern=0
                     else:
@@ -760,7 +815,11 @@ class user():
                 self.name=str(input('enter your name = ',))
                 era=1
                 while era==1:
-                    self.age=int(input('enter your age = ',))
+                    try:
+                        self.age=int(input('enter your age = ',))
+                    except ValueError:
+                        print("\ninvalid input")
+                        continue
                     if self.age<=16:
                         print('sorry you cant sign up')
                         return False
@@ -780,7 +839,11 @@ class user():
                 erad=1
                 while erad==1:
                     print('enetr your 12 digit aadhar number or if you dont want to then please enter 2')
-                    self.Aadhar=int(input())
+                    try:
+                        self.Aadhar=int(input())
+                    except ValueError:
+                        print("\ninvalid input try again")
+                        continue
                     if len(str(self.Aadhar))==12:
                         print('aadhar number saved successfully')
                         erad=0
@@ -810,7 +873,11 @@ class user():
                 while err==2:
                     ern=1
                     while ern==1:
-                        self.num=int(input('enter your mobile number = ',))
+                        try:
+                            self.num=int(input('enter your mobile number = ',))
+                        except ValueError:
+                            print("\ninvalid input")
+                            continue
                         if len(str(self.num))==10:
                             ern=0
                         else:
@@ -833,7 +900,11 @@ class user():
                             j=0
                             while j==0:
                                 print('mobile number is not singed up please enter correct number or sing up\nto go back to main menu press 1 or if you want to try again press 2\n')
-                                j = int(input())
+                                try:
+                                    j = int(input())
+                                except ValueError:
+                                    print("\ninvalid input")
+                                    continue
                                 if j==2:
                                     err=2
                                 elif j==1:
@@ -862,7 +933,11 @@ class user():
                 ss=0
                 while ss==0:
                     print('Select which seat do you want :-\nPress 1 for 1st AC \nPress 2 for 2nd AC \nPress 3 for 3rd AC\nPress 4 for General Non AC seats')
-                    ss=int(input())
+                    try :
+                        ss=int(input())
+                    except ValueError:
+                        print("\ninvalid input")
+                        continue
                     if ss==1 :
                         sss='1A(avl)'
                         ssu='1st AC seat'
@@ -892,7 +967,11 @@ class user():
                         ns=0
                         while ns==0:
                             print('enter number of seats you want to book')
-                            ns = int(input())
+                            try:
+                                ns = int(input())
+                            except ValueError:
+                                print("\ninvalid input")
+                                continue
                             if ns<=0:
                                 ns=0
                                 print('invalid input try again')
@@ -929,7 +1008,11 @@ class user():
                                                 bp=0
                                                 while bp==0:
                                                     print(f'Total Bill Amount is {ba} to pay press 1 or else to exit press 2')
-                                                    bp=int(input())
+                                                    try:
+                                                        bp=int(input())
+                                                    except ValueError:
+                                                        print("\ninvalid input")
+                                                        continue
                                                     if bp==1:
                                                         print('payment success')
                                                     elif bp==2:
@@ -987,7 +1070,11 @@ class user():
                 pbi=0
                 while pbi==0:
                     print('do you want to try for another date as any train for that route after the date you selected is not available \nIf you want to retry Press 1\nIf you want to exit Press 2')
-                    pbi=int(input())
+                    try:
+                        pbi=int(input())
+                    except ValueError:
+                        print("\ninvalid input")
+                        continue
                     if pbi==1:
                         print('select all credentials again')
                     elif pbi ==2:
@@ -1057,14 +1144,22 @@ def main():
     pb=0
     while pb==0:
         print('Press 1 to Log In/Sign Up\nPress 2 for Sys.emp')
-        pb=int(input())
+        try:
+            pb=int(input())
+        except ValueError:
+            print("\ninvalid input")
+            continue
         if pb==1:
             us=user()
             us.Sign_Up_Log_In()
             fi=0
             while fi!=7:
                 print('Press 1 to check for a Station\nPress 2 to check for a Route\nPress 3 to check for a Train\nPress 4 to Book Train Tickets\nPress 5 to Check Account Details\nPress 6 to Change Password\nPress 7 to Log Out')
-                fi=int(input())
+                try:
+                    fi=int(input())
+                except ValueError:
+                    print("\ninvalid input")
+                    continue
                 if fi==1:
                     us.Search_station()
                 elif fi==2:
@@ -1088,7 +1183,11 @@ def main():
                 pbs=0
                 while pbs==0:
                     print('Press 1 to Add Station\nPress 2 to Create Route\nPress 3 to Add Train\nPress 4 to Add Route to Train')
-                    pbs=int(input())
+                    try:
+                        pbs=int(input())
+                    except ValueError:
+                        print("\ninvalid input")
+                        continue
                     if pbs==1:
                         station.station_add()
                     elif pbs==2:
@@ -1099,6 +1198,7 @@ def main():
                         Train.add_route_to_train()
                     else:
                         print('invalid input')
+                        pbs=0
             else:
                 return False
         else:
