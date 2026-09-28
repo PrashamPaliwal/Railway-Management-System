@@ -57,3 +57,8 @@ Built with a **multi-file structure** for scalability and future expansion.
 ## ⚠️ Notes
 - The system requires all data files and folders to be present.  
 - This project was built to practice system design and file-based data handling.  
+
+---
+
+## Working Code PIC
+-rms.jpeg
