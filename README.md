@@ -33,7 +33,8 @@ Built with a **multi-file structure** for scalability and future expansion.
 ## ⚙️ How to Run
 1. Clone the repository.  
 2. Keep all folders and `.txt` files in the same structure.  
-3. Run `TRAIN.py` in Python.  
+3. Run `TRAIN.py` in Python.
+4. Now create stations, routes, trains, add train to routes for dates and book from user end   
 
 ---
 
