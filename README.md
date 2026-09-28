@@ -61,4 +61,4 @@ Built with a **multi-file structure** for scalability and future expansion.
 ---
 
 ## Working Code PIC
-- rms.jpeg
+- `rms.jpeg`
